@@ -15,5 +15,3 @@ if (container) {
 } else {
   throw Error("Container is not defined!");
 }
-
-// window.onload = () => bridge.init;
