@@ -1,5 +1,3 @@
-import path from "path";
-
 const preparePaths = (outputs: string[]) =>
   outputs.reduce<Array<string[]>>(
     (acc, path) => {

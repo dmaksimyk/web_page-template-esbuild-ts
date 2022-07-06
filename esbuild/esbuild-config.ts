@@ -1,4 +1,4 @@
-import { build, BuildOptions } from "esbuild";
+import { BuildOptions } from "esbuild";
 import { resolveRoot } from "./methods";
 import { CleanPlugin, HTMLPlugin } from "./plugins";
 

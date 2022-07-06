@@ -26,4 +26,5 @@ const layout = (options?: THTMLPluginOptions) =>
   </body>
 </html>
 `;
+
 export default layout;
