@@ -9,6 +9,8 @@
     "jsx": "react-jsx",
     "allowJs": true,
 
+    "removeComments": true,
+
     "strict": true,
     "esModuleInterop": true,
     "moduleResolution": "node",

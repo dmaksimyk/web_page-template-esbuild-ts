@@ -1,5 +1,10 @@
+// Vendor
 import { BuildOptions } from "esbuild";
+
+// Methods
 import { resolveRoot } from "./methods";
+
+// Plugins
 import { CleanPlugin, HTMLPlugin } from "./plugins";
 
 const isProd: boolean = process.env.MODE === "prod";
@@ -24,14 +29,13 @@ const config: BuildOptions = {
   plugins: [CleanPlugin, HTMLPlugin({ title: title })],
   watch: !isProd && {
     onRebuild(error, result) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Generating build...");
-        if (result) {
-          console.clear();
-          console.log("Finished re-build!");
-        }
+      console.clear();
+      console.log("Generating build...");
+      if (error) console.error("Generating build failed:", error);
+      else {
+        result?.warnings.map((msg) => console.warn(msg));
+        result?.errors.map((msg) => console.error(msg));
+        console.log(`Finished re-build!`);
       }
     },
   },
